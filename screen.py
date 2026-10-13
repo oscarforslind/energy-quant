@@ -10,6 +10,7 @@ from quotes import to_quote_dict, to_series, available_dates
 from calendar_tools import coverage_report
 from freight import hubs, freight, gasoline, screen_arbs
 from solvers import crack_margin, breakeven_crude
+from plots import plot_series
 
 dates = ["2026-05-01", "2026-05-04", "2026-05-05",
          "2026-05-06", "2026-05-07", "2026-05-08"]
@@ -84,3 +85,5 @@ for margin, origin, dest in screen_arbs(hubs, freight, gasoline):
     else:
         shut = shut + 1
 print(f"({shut} routes shut)")
+
+plot_series(window, cracks,"3:2:1 crack spread", "$/bbl", reference=mean)
