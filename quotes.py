@@ -45,8 +45,8 @@ if __name__ == "__main__":
     dates = ["2026-05-05", "2026-05-06", "2026-05-07"]
     brent = [68.40, 68.95, 69.10]
     rbob = [1.95, 1.97, 1.96]
-    quotes = to_quote_dict(dates, brent, "brent")
-    quotes.update(to_quote_dict(dates, rbob, "rbob"))
+    q = to_quote_dict(dates, brent, "brent")
+    q.update(to_quote_dict(dates, rbob, "rbob"))
 
 
     print(len(q))

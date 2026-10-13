@@ -12,10 +12,11 @@ freight = [
     [3.40, 4.50, 4.20, 0.00],
 ]
 
-gasoline = {"Rotterdam": 81.90,
-            "New York": 85.60,
-            "Houston": 81.20,
-            "Singapore": 84.00,
+gasoline = {
+    "Rotterdam": 81.90,
+    "New York": 85.60,
+    "Houston": 81.20,
+    "Singapore": 84.00,
 }
 
 
@@ -51,16 +52,7 @@ def screen_arbs(hubs, freight, prices):
 
 
 if __name__ == "__main__":
-    print(freight[0])
-    print(freight[0][2])
-    print(freight[2][0])
-    print(len(freight))
-    print(len(freight[0]))
-    print(freight[1][:1])
-    print(freight[2][:2])
-    print(freight[3][:3])
     assert reduce_freight(freight) == reduce_freight_comp(freight)
-    for row in screen_arbs(hubs, freight, gasoline):
-        print(row)
+
     for margin, origin, dest in screen_arbs(hubs, freight, gasoline):
-        print (f"{origin:<12} -> {dest:<12} {margin:+6.2f}")
+        print(f"{origin:<12} -> {dest:<12} {margin:+6.2f}")

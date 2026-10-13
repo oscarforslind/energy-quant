@@ -13,12 +13,12 @@ def bisect(f, a, b, tol=1e-8, max_iter=200):
 
     f -- a function of one variable
     a,b -- interval endpoints, f(a) and f(b) must have opposite signs.
-   tol  -- stop when the interval is narrower than this
-   max_iter -- safety limit on the number of halvings
+    tol  -- stop when the interval is narrower than this
+    max_iter -- safety limit on the number of halvings
 
-   Returns (root, n_inter)
-   Raises ValueError if no sign change is bracketed.
-   """ 
+    Returns (root, n_inter)
+    Raises ValueError if no sign change is bracketed.
+    """ 
     
     if f(a) * f(b) >= 0:
         raise ValueError(f" no sign change, f({a}) = {f(a)}, f({b}) = {f(b)}")
@@ -40,8 +40,7 @@ def crack_margin(brent, rbob, ulsd, opex=0.0):
 
 
 def npv(rate, capex, annual_margin, years): 
-    """Should we be investing in a hydrocracker
-    what is the breakeven and what is the net price value
+    """Net present value of a flat annual margin against an upfront capex
     """
     total = -capex
     for t in range(1, years + 1):
